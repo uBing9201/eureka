@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sboot.sijak.dao.SawonDAO">
+	<!-- namespace 를 이렇게 하면 easy 작성 -->
+	<select id="getAllInfo" resultType="com.sboot.sijak.vo.SawonVO">
+		select * from teltable222 order by name
+	</select>
+
+	<select id="getInfo" resultType="com.sboot.sijak.vo.SawonVO">
+		select * from teltable222 where name = #{name}
+	</select>
+
+	<update id="updateInfo">
+		update teltable222 set tel= #{tel} where name= #{name}
+	</update>
+
+
+	<insert id="insertInfo">
+		insert into teltable222 values ( #{name}, #{tel})
+	</insert>
+
+	<delete id="deleteInfo">
+		delete from teltable222 where name = #{name}
+	</delete>
+</mapper>
